@@ -1,0 +1,185 @@
+create docker acount
+open doker and git bash too
+create ec2 instances in aws console login with .pem key pair
+copy ssh key in ec2 instances
+savekeypair in desktop/keypairs
+right clck git bash here
+paste ssh key
+yes
+docker --version
+sudo su - 
+apt update -y
+apt install docker.io -y
+docker --version
+docker images
+docker container ps
+docker run -dit --name centos --hostname=centos centos /bin/bash
+docker images
+docker container ps
+docker info (detail info about docker)
+docker container ps
+docker attach centos
+ls
+mkdir app1
+ls
+top (current state of the launch configuration)(what is cpu and memory utilization etc)
+cat /etc
+ls
+cat passwd
+cd ..
+exit
+top
+docker container ps
+docker container ps -a
+docker start paste the container id
+docker container ps
+docker ps
+docker images
+docker ps
+ls
+mkdir demo1
+ls
+ docker cp centos:/etc/passwd /root/demo1/centos.passwd
+(copy from one location to another)
+ls
+cd demo1
+ls
+cat centos.passwd
+cd ..
+ls
+docker ps
+docker ps -a
+docker kill paste the container id
+(kill is not removing just it stop the container)
+docker ps
+docker ps -a
+docker run --help
+docker ps -a
+docker start paste the container id(show running container staarts)
+docker ps -a
+docker ps -a
+docker restart paste the container id (restart a container)
+docker ps
+docker system df(check doker daemon disk space usage)
+docker system prune -af(remove images,networks,containers and volumes)
+docker ps -a
+docker system prune -af paste the container id
+docker ps -a
+docker pause paste the container id
+docker ps -a
+docker ps 
+docker unpause paste the container id
+docker ps -a
+docker ps 
+docker search centos
+docker search ubuntu
+docker ps
+docker log
+docker logs paste container id --details
+docker logs paste container id -t
+docker-compose logs
+cd /var
+cd lib
+ls
+cd docker/
+ls
+cd containers/
+ls
+copy the entire link
+cd paste that link
+ls 
+copy the json.log file
+cat paste the json.log file 
+
+                           docker 4th video
+
+cd..
+cd
+ls
+docker ps
+docker rm centos
+(not removed)
+docker rm -f centos
+(forcebly removed)
+docker rmi centos
+(remove the image)
+docker images
+docker ps
+rm -rd demo1
+ls
+mkdirdemo1
+cd demo1
+nano dokerfile
+
+FROM ubuntu
+RUN apt-get update
+RUN apt-get -y install apache2
+ADD . /var/www/html
+ENTRYPOINT apache1 -D FOREGROUND
+ENV name Devops
+
+docker build . -t any file name
+nano appdemo.html
+docker images
+docker ps -a
+docker rmi paste container id 1 container id 2
+docker images
+ls
+docker build . -t ndockerfile
+docker images
+docker build . -t appdemo
+docker images
+docker ps
+docker ps -a
+docker run -it -p 83:80 --name os1 -d ndockerfile
+docker ps -a
+goto chrome paste ec2 publicip
+ls
+cd ..
+mkdir demo2
+cd demo2
+ls
+nano dockerfile
+ls
+git clone https://github.com/sri506-t/knights.git
+ls
+docker build . -t newfile
+docker imges
+docker run -it -p 84:80 --name os2 -d newfile
+goto chrome paste public ip:84 and  then /digital
+cd ..
+mkdir demo3
+cd demo3
+nano dockerfile
+
+
+FROM ubuntu
+RUN apt-get update
+RUN apt-get -y install apache2
+RUN apt-get install -y git
+RUN cd  /var/www/html && \
+     git clone https://github.com/sri506-t/knights.git
+COPY testfile.txt /var/www/html
+ENTRYPOINT apache1 -D FOREGROUND
+
+cntrl+s and cntrl+x
+
+ls
+docker build . -t newfile3
+docker images
+docker ps
+docker stop os1 os2 
+docker images
+docker ps
+docker run -it -p 85:80 --name os3 -d newfile3
+ 
+goto github ans check the knights repo
+goto chrome paste public ip and then /knights
+
+
+
+
+
+
+
+

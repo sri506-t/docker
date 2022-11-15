@@ -1,0 +1,44 @@
+FROM ubuntu
+RUN apt-get update
+RUN apt-get -y install apache2
+ADD . /var/www/html
+ENTRYPOINT apache1 -D FOREGROUND
+ENV name Devops
+
+//docker build . -t new_dockerfile
+
+
+--------------------------------------------------------------------------
+
+FROM ubuntu
+RUN apt-get update
+RUN apt-get -y install apache2
+RUN apt-get install -y git
+RUN cd  /var/www/html && \
+     git clone https://github.com/sri506-t/knights.git
+COPY testfile.txt /var/www/html
+ENTRYPOINT apache1 -D FOREGROUND
+
+--------------------------------------------------------------------------
+
+
+FROM centos:7
+RUN yum install java -y
+RUN mkdir  /opt/tomcat
+WORKDIR /opt/tomcat
+ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.63/bin/apache-tomcat-9.0.63.tar.gz .
+RUN tar -xvzf apache-tomcat-9.0.63.tar.gz
+RUN mv apache-tomcat-9.0.63/* /opt/tomcat
+EXPOSE 8080
+CMD ["/opt/tomcat/bin/catalina.sh","run"]
+
+
+
+
+docker build -t digitalweb .
+
+docker run -itd --name digital1 -p 8083:8080 digitalweb
+
+git clone https://github.com/sri506-t/digital.git
+
+docker cp digital1:/opt/tomcat/webapps

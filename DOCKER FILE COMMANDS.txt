@@ -1,0 +1,87 @@
+1)docker --version
+2)docker pull <image-name>
+3)docker images
+4)docker run <image-name>
+	:this command helps in running containers,from their image name
+  docker run -it -p 83:80 --name web1 -d <image-name>
+ Note : -d : demanized mode means runs in background.
+5) docker ps
+6) docker ps -a
+7)docker exec -it <container-id> bash
+
+8) docker stop <container-id>
+9)docker kill <container-id>
+10)docker rm <container-id>
+11)docker rmi <image-id>
+12)docker login
+13)docker push <username>/<image-name>
+14)dockerpull <image-name>
+15)docker commit <container-id> username/app-name
+	docker commit 1212121 sri506/sam1.0
+
+  docker logs [OPTIONS] CONTAINER
+
+to copy files and folders from one souurce to destination
+
+cp -r . /var/www/html
+
+docker logs <container_id> --details
+docker logs <container_id> -t
+docker-compose logs
+cat /var/lib/docker/containers/2216262f7b6d44ef8ba22a856a6bbfea2ecee516045c897f4bdadb8752ca.........
+
+>To remove all running containers
+ docker container rm -f $(docker container ps -aq)
+
+
+docker run --help
+docker info
+
+docker run -dit --name centos--hostname=centos /bin/bash
+docker ps
+docker attach centos
+top
+exit
+docker ps -a
+docker run centos /user/bin/free -m
+docker ps -a
+docker start centos
+docker top centos
+docker stats centos
+
+#copying cp os4:/etc/passwd/root/demo/centos.passwd
+cat /root/centos.passwd
+
+docker killos4
+docker ps -a
+
+
+
+
+docker restart <container-name> 	restart a container
+docker stats				show running container stats
+docker sysytem df			check docker daemon disk space usage
+docker systemprune -af			remove images, networks,containers,and volumns
+
+docker pause <container>
+docker unpause <container>
+
+https://dockerlabs.collabnix.com/docker/cheatsheet/
+
+---------------docker attach demo-----------------
+>docker pull ubuntu:16.04
+
+>docker run -it --name test -d ubuntu:16.04
+
+>docker attach test
+>Enter
+>exit
+>docker ps -a | grep test
+>ocker start <container-id>
+
+
+docker search centos
+docker run centos
+docker ps
+docker ps -a
+docker run -d

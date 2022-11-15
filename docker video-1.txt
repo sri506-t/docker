@@ -1,0 +1,125 @@
+create docker acount
+open doker and git bash too
+create ec2 instances in aws console login with .pem key pair
+copy ssh key in ec2 instances
+savekeypair in desktop/keypairs
+right clck git bash here
+paste ssh key
+yes
+docker --version
+sudo su - 
+apt update -y
+apt install docker.io -y
+docker --version
+docker images
+docker pull ubuntu
+docker images
+docker container ps
+docker container ps -a
+docker run --name os1 -p 83:80 -it -d ubuntu
+it -> interactive template
+-d -> ditachable
+docker container ps (list of the containers)
+docker stop paste the container id
+docker container ps
+docker container ps -a 
+-a -> shows exited files or hidden files
+docker start pste container id
+docker container ps -a
+docker images
+docker container ps -a
+docker exec -it paste container id bash
+(now container id comes inti ip address place)
+apt update -y
+mkdir demo1
+ls
+cd demo1
+mkdir file-1.txt
+ls
+rm file-1.txt/
+rmdir file-1.txt/
+ls
+touch file-1.txt
+ls
+apt install nano -y (nano will be installed)
+ls
+nano file-1.txt
+type any text here
+cntrl+s and cntrl+x
+ls
+cat file1.txt
+cd
+ls
+apt install apache2 -y
+cd/var/www/html
+ls
+nano form1.html
+go to chrome search htmlw3schools
+forms
+try it yourself
+copy html file paste in nano prompt
+type <center>
+cntrl+s cntrl+x
+ls
+service apache2 status (apache 2 is not running)
+service apache2 start
+ls
+service apache2 status(apache 2 is running)
+exit (if u want exit from the current location)
+again exit (if u want exit from the current container)
+exit
+exit
+sudo su -
+ls
+docker container ps
+docker exec -it paste container id bash
+ls
+service apache2 status
+service apache2 stop
+exit
+docker container ps
+docker images
+docker commit paste container id form1
+docker container ps
+docker images
+docker login
+username srilatha506
+password deekshu&7111
+docker push form1
+docker images
+docker container ps
+docker commit paste containerid srilatha506/form1
+docker images
+docker push srilatha/form1
+docker images
+docker container ps
+docker run -it --name os2 -p 84:80 -d ubuntu
+docker run -it --name os3 -p 85:80 -d ubuntu
+docker container ps
+docker images
+docker container ps
+docker stop paste container id
+docker container ps
+docker rm os3
+docker ps -a
+docker rm os2
+docker rm -f os2
+docker images
+docker run -it --name os4 -p 86:80 -d ubuntu
+docker run -it --name os5 -p 87:80 -d ubuntu
+docker ps -a
+docker container rm -f $(docker container ps -aq)
+all the containers deleted at a time
+docker ps -a
+docker images
+docker rmi container 1 container2 container3
+all container images deleted
+docker images
+
+
+
+
+
+ 
+
+
