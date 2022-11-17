@@ -1,0 +1,29 @@
+WHAT IS A DOCKER IMAGE ?
+
+A docker image is an executable package thaat includes everything  that the application needs to run.
+this includes code, libraries,configuration files,and environment variables.
+
+where do you find docker logs?
+
+you can find these JSON log files in the /var/lib/docker/containers/ directory on a linux docker host.
+
+docker networks types :
+
+1)none
+2)host
+3)bridge - used within a single host
+	docker network create -d bridge my-bridge-net
+4)overlay - for multi-host communication
+	docker network create -d overlay --subnet=192.168.10.0/24 my-overlay-net
+5)macvlan - which are used to connect docker containers directly to host network interfaces.
+
+Q)COPY and ADD are both dockerfile instructions that serve similar purpose?
+
+-COPY takes in a src and destination . it only lets you copy in a local file or directory from your host.
+(the machine building the docker image) into the docker image itself.
+
+- ADD lets you do that too, but it also supports 2other sources.
+- First, you can use a URL instead of a local file / directory.
+- secondly , you can extract a tar file from the source directly into the destination.
+
+    ADD   COPY  ENV  EXPOSE   FROM  LABEL  USER   VOLUME   WORKDIR

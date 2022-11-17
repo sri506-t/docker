@@ -1,0 +1,119 @@
+create ec2 instances
+copy ssh key
+open git bash
+paste link then enter
+sudo su -
+check whether docker is installed or not
+docker --version
+apt update -y
+apt install docker.io -y
+ls
+mkdir demo1
+cd demo1
+ls
+nano dockerfile
+ping google.com
+nano dockerfile
+ls
+docker images
+docker container ps
+ls
+docker build .-t digitalweb
+ls
+cd..
+cd /opt
+ls
+cd containered
+ls
+cd demo1
+ls
+docker build .-t digitalweb1
+docker images
+docker run -it -p 83:80 --name tomcat1 -d digitalweb1
+docker container ps
+cd
+cd /opt
+ls
+cd ..
+cd
+docker images
+docker ps -a
+goto ecs publicip paste in chrome 
+ip address:83
+docker exec -it paste container id bash
+ls
+cd /opt
+cd tomcat/
+ls
+cd apache-tomcat-9.0.68
+cd ..
+ls
+cd bin/
+ls
+./catalina.sh
+exit
+docker ps
+docker rm -f paste containerid
+docker ps
+docker run -it -p 8083:8080 --name tomcat1 -d digitalweb1
+docker ps
+ls
+sudo su -
+git clone https://github.com/sri506-t/digital.git
+docker ps
+ls
+docker cp digital tomcat1:/opt/tomcat/webapps
+goto chrome publicip:8083/digital/
+DOCKER PS
+DOCKER RMI -F PASTE CONTAINER ID
+ls
+rm -rd demo1
+docker ps
+docker images
+docker rmi digitalweb1 digitalweb centos:7
+docker images
+ls
+mkdir demo1
+cd demo1
+ls
+nano dockerfile
+
+FROM ubuntu
+RUN apt-get update -y
+CMD echo "hello world"
+CMD echo "welcome to docker"
+
+cntrl+s cntrl+x
+
+docker build . -t app1
+ls
+docker images 
+(app1 and ubuntu)
+docker ps
+docker run -it app1
+(welcome to docker)
+docker run -it app1 echo 'welcome to aws'
+(welcome to aws)
+docker ps-a
+cd ..
+mkdir demo2
+cd demo2
+nano docker file
+
+FROM ubuntu
+RUN apt-get update
+ENTRYPOINT ["echo","hello world"]
+ENTRYPOINT ["echo","welcome to docker"]
+
+cntrl+s cntrl+x
+docker build . -it app2
+docker images
+docker run -it app2
+(welcome to docker)
+docker run -it app2 welcome to aws
+
+
+CMD is an instruction that is best to use if you need a default command whichusers can easily override.
+if a dockerfile has 
+
+

@@ -1,0 +1,65 @@
+docker file :
+------------------
+
+FROM ubuntu
+RUN apt-get update -y
+CMD echo "hello world"
+CMD echo "welcome to docker"
+
+>
+docker build . -t app1
+
+>
+docker run -it app1
+>
+docker run -it app1 echo 'welcome to aws'
+
+docker run -it app hostname
+
+------------------------------------
+the CMD instruction is only utilized if there is no argument added to the run command
+when starting a container.
+therefore, if you add an argument to the command,you override the CMD.
+
+==========================================
+NOTE : now change docker file
+
+#ENTRY POINT
+
+FROM ubuntu
+RUN apt-get update
+ENTRYPOINT ["echo","hello world"]
+ENTRYPOINT ["echo","welcome to docker"]
+
+>
+docker build . -t app2
+
+>
+docker run -it app2
+>
+docker run -it app2 welcome to aws
+
+CMD is an instruction that is best to use if you need a default command which users can easly override.
+if a dockerfile has multiple CMDs, it only applies the instructions from the last one.
+
+on the other hand, ENTRYPOINT is preffered when you want to define a container with a specipic executable.
+   you cannot override an ENTRYPOINT when starting a container unless you add the --entrypoint flag
+
+
+
+assignment :
+
+FROM ubuntu
+RUN apt-get update
+ENTRYPOINT ["echo","hello"]
+CMD ["world"]
+
+Summary :
+----------
+CMD Overriden
+
+ENTRYPOINT Overriden
+
+ENTRYPOINT and CMD appendable
+
+CMD sets default command and/or parameters, which can be overwritten from command line when docker container runs. ENTRYPOINT command and parameters will not be overwritten from command line.
